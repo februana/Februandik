@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-    <title>Halo februana!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FEBRUANDIK</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            font-size: 24px;
+        }
+        .description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 200px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        .upload-btn {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Website Februari Andik</h1>
-    <p>Ini adalah website saya di Cloudflare Pages.</p>
+
+    <header>FEBRUANDIK</header>
+    <p class="description">Memory of Love</p>
+
+    <button class="upload-btn" onclick="addPhoto()">Tambah Foto</button>
+
+    <div class="gallery" id="gallery">
+        <!-- Foto akan ditampilkan di sini -->
+    </div>
+
+    <script>
+        function addPhoto() {
+            let url = prompt("Masukkan URL gambar:");
+            if (url) {
+                let img = document.createElement("img");
+                img.src = url;
+                document.getElementById("gallery").appendChild(img);
+            }
+        }
+    </script>
+
 </body>
 </html>
